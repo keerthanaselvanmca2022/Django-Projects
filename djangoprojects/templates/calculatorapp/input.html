@@ -1,41 +1,70 @@
 {% extends 'index.html' %}
 
 {% block content %}
+<style>
+    * {
+        box-sizing: border-box;
+    }
 
-<h1>Addition</h1>
-<form action="add" method="POST">
-    {% csrf_token %}
+    .column {
+        float: left;
+        width: 50%;
+        padding: 10px;
+        height: 300px;
+    }
 
-    Enter first number: <input type="number" step="0.00000000001" name="num1"><br><br>
-    Enter second number: <input type="number" step="0.0000000001" name="num2"><br><br>
-    <input type="submit">
-</form>
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
 
-<h1>Subtraction</h1>
-<form action="sub" method="POST">
-    {% csrf_token %}
+    h2 {
+        font-style: italic;
+    }
+</style>
+<div class="row">
+    <div class="column">
+        <h2>Addition</h2>
+        <form action="add" method="POST">
+            {% csrf_token %}
 
-    Enter first number: <input type="number" step="0.00000000001" name="num1"><br><br>
-    Enter second number: <input type="number" step="0.0000000001" name="num2"><br><br>
-    <input type="submit">
-</form>
+            Enter first number: <input type="number" step="0.00000000001" name="num1"><br><br>
+            Enter second number: <input type="number" step="0.0000000001" name="num2"><br><br>
+            <input type="submit"> <input type="reset">
+        </form>
+    </div>
+    <div class="column">
+        <h2>Subtraction</h2>
+        <form action="sub" method="POST">
+            {% csrf_token %}
 
-<h1>Multiplication</h1>
-<form action="multi" method="POST">
-    {% csrf_token %}
+            Enter first number: <input type="number" step="0.00000000001" name="num1"><br><br>
+            Enter second number: <input type="number" step="0.0000000001" name="num2"><br><br>
+            <input type="submit"> <input type="reset">
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="column">
+        <h2>Multiplication</h2>
+        <form action="multi" method="POST">
+            {% csrf_token %}
 
-    Enter first number: <input type="number" step="0.00000000001" name="num1"><br><br>
-    Enter second number: <input type="number" step="0.0000000001" name="num2"><br><br>
-    <input type="submit">
-</form>
+            Enter first number: <input type="number" step="0.00000000001" name="num1"><br><br>
+            Enter second number: <input type="number" step="0.0000000001" name="num2"><br><br>
+            <input type="submit"> <input type="reset">
+        </form>
+    </div>
+    <div class="column">
+        <h2>Division</h2>
+        <form action="div" method="POST">
+            {% csrf_token %}
 
-<h1>Division</h1>
-<form action="div" method="POST">
-    {% csrf_token %}
-
-    Enter first number: <input type="number" step="0.00000000001" name="num1"><br><br>
-    Enter second number: <input type="number" step="0.0000000001" name="num2"><br><br>
-    <input type="submit">
-</form>
-
+            Enter first number: <input type="number" step="0.00000000001" name="num1"><br><br>
+            Enter second number: <input type="number" step="0.0000000001" name="num2"><br><br>
+            <input type="submit"> <input type="reset">
+        </form>
+    </div>
+</div>
 {% endblock %}
